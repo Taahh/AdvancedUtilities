@@ -1,11 +1,13 @@
 package me.taahanis.AdvancedUtilities;
 
 import me.taahanis.AdvancedUtilities.Commands.Command_au;
+import me.taahanis.AdvancedUtilities.Listeners.PlayerListener;
 import net.pravian.aero.command.handler.AeroCommandHandler;
 import net.pravian.aero.command.handler.SimpleCommandHandler;
 import net.pravian.aero.config.YamlConfig;
 import net.pravian.aero.plugin.AeroPlugin;
 import net.pravian.aero.util.Loggers;
+import org.bukkit.plugin.PluginManager;
 
 public class AdvancedUtils extends AeroPlugin<AdvancedUtils> {
     
@@ -28,6 +30,9 @@ public class AdvancedUtils extends AeroPlugin<AdvancedUtils> {
         handler.registerAll(handler.getCommandClassPrefix(), true);
         
         config.load();
+        
+        final PluginManager pm = plugin.getServer().getPluginManager();
+        pm.registerEvents(new PlayerListener(), plugin);
         
         Loggers.info("[AU] Enabled v" + plugin.getVersion() + " made by " + plugin.getAuthor());
     }

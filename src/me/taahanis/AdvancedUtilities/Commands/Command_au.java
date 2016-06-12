@@ -2,9 +2,12 @@ package me.taahanis.AdvancedUtilities.Commands;
 
 import me.taahanis.AdvancedUtilities.AdvancedUtils;
 import net.md_5.bungee.api.ChatColor;
+import net.pravian.aero.command.CommandOptions;
 import net.pravian.aero.command.SimpleCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+
+@CommandOptions()
 
 public class Command_au extends SimpleCommand<AdvancedUtils> {
     
